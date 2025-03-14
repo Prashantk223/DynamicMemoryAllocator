@@ -81,19 +81,4 @@ void mm_instantiate_new_page_family(
     vm_page_family_curr->struct_size = struct_size;
     vm_page_family_curr->first_page = NULL;
 }   
-int main() {
-    mm_init();
-    printf("VM page size = %zu\n", SYSTEM_PAGE_SIZE);
 
-    void* addr1 = mm_get_new_vm_page_from_kernel(1);
-    void* addr2 = mm_get_new_vm_page_from_kernel(1);
-
-    if (addr1 && addr2) {
-        printf("Page 1 = %p, Page 2 = %p\n", addr1, addr2);
-    }
-
-    mm_return_vm_page_to_kernel(addr1, 1);
-    mm_return_vm_page_to_kernel(addr2, 1);
-
-    return 0;
-}
