@@ -4,6 +4,8 @@ typedef struct emp_ {
 	char name[32];
 }emp_t;
 
+/* student_ is the tag name of the struct. It's used internally within the struct 
+ * definition—particularly to define self-referential pointers (like struct student_* next;)*/
 typedef struct student_ {
 	char name[32];
 	uint32_t rollno;
